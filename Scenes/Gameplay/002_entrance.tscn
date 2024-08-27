@@ -1,0 +1,154 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy8w0g6uom46j"]
+
+[ext_resource type="PackedScene" uid="uid://b50xvgq4h1ve3" path="res://Assets/3D/Models/002/002.glb" id="1_v5wtk"]
+[ext_resource type="PackedScene" uid="uid://g58tfybka1yy" path="res://Assets/3D/tscn/player.tscn" id="2_46wdl"]
+
+[sub_resource type="Environment" id="Environment_s5xjf"]
+ambient_light_source = 2
+ambient_light_color = Color(0.114897, 0.114897, 0.114897, 1)
+ambient_light_energy = 3.25
+glow_enabled = true
+volumetric_fog_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qagfr"]
+size = Vector3(100, 1, 100)
+
+[node name="002_entrance" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_s5xjf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0.223702, 0.111615, 0.968246, -0.44717, 0.894449, 0.00020498, 0, 0, 0)
+visible = false
+light_energy = 0.705
+shadow_enabled = true
+shadow_bias = 0.0
+
+[node name="Structure" parent="." instance=ExtResource("1_v5wtk")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Structure"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Structure/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00153971, 2.18365)
+shape = SubResource("BoxShape3D_qagfr")
+
+[node name="Player" parent="." instance=ExtResource("2_46wdl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.20846, 0)
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="Lights1" type="Node3D" parent="Lights"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/Lights1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.24439, 11.3466, 4.15583)
+light_color = Color(0.999449, 1, 0.901084, 1)
+light_energy = 1.825
+light_volumetric_fog_energy = 1.655
+light_specular = 2.322
+shadow_enabled = true
+spot_range = 15.44
+spot_attenuation = 0.35
+spot_angle = 31.3
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights/Lights1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.36808, 11.1973, 4.10125)
+light_color = Color(1, 1, 0.901961, 1)
+light_energy = 0.605
+shadow_bias = 0.707
+shadow_normal_bias = 2.238
+shadow_transmittance_bias = -2.693
+shadow_opacity = 0.42
+omni_range = 1.824
+omni_attenuation = 0.596
+
+[node name="Lights2" type="Node3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.4447)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/Lights2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.24439, 11.3466, 4.15583)
+light_color = Color(0.999449, 1, 0.901084, 1)
+light_energy = 1.825
+light_volumetric_fog_energy = 1.655
+light_specular = 2.322
+shadow_enabled = true
+spot_range = 15.44
+spot_attenuation = 0.35
+spot_angle = 31.3
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights/Lights2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.36808, 11.1973, 4.10125)
+light_color = Color(1, 1, 0.901961, 1)
+light_energy = 0.605
+shadow_bias = 0.707
+shadow_normal_bias = 2.238
+shadow_transmittance_bias = -2.693
+shadow_opacity = 0.42
+omni_range = 1.824
+omni_attenuation = 0.596
+
+[node name="Lights3" type="Node3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2259, 0, -3.99945)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/Lights3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.24439, 11.3466, 4.15583)
+light_color = Color(0.999449, 1, 0.901084, 1)
+light_energy = 1.015
+light_volumetric_fog_energy = 1.655
+light_specular = 2.322
+shadow_enabled = true
+spot_range = 15.44
+spot_attenuation = 0.35
+spot_angle = 31.3
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights/Lights3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.36808, 11.1973, 4.10125)
+light_color = Color(1, 1, 0.901961, 1)
+light_energy = 0.605
+shadow_bias = 0.707
+shadow_normal_bias = 2.238
+shadow_transmittance_bias = -2.693
+shadow_opacity = 0.42
+omni_range = 1.824
+omni_attenuation = 0.596
+
+[node name="Lights4" type="Node3D" parent="Lights"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights/Lights4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8966, 4.52775, 7.92004)
+light_energy = 1.025
+light_volumetric_fog_energy = 0.459
+light_specular = 2.27
+shadow_enabled = true
+omni_range = 4.981
+omni_attenuation = 0.42
+
+[node name="Lights5" type="Node3D" parent="Lights"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights/Lights5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8966, 4.48349, 2.6594)
+light_energy = 1.025
+light_volumetric_fog_energy = 0.459
+light_specular = 2.27
+shadow_enabled = true
+omni_range = 4.981
+omni_attenuation = 0.42
+
+[node name="Lights6" type="Node3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3769, 2.49363, -4.10064)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights/Lights6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.39394, 0.196316, -1.33825)
+visible = false
+shadow_enabled = true
+omni_range = 0.84
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/Lights6"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.45983, -0.564364, -1.22812)
+light_color = Color(1, 1, 0.901961, 1)
+light_energy = 1.07
+light_volumetric_fog_energy = 16.0
+light_specular = 1.308
+shadow_enabled = true
+spot_range = 1.965
+spot_angle = 67.6

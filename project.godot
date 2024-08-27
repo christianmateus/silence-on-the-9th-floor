@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SceneChanger="*res://Scenes/Gameplay/scene_changer.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -57,8 +58,8 @@ layout/default_style="res://Scenes/Dialogues/001/style.tres"
 
 [display]
 
-window/size/viewport_width=576
-window/size/viewport_height=324
+window/size/viewport_width=768
+window/size/viewport_height=432
 window/size/mode=3
 window/stretch/mode="viewport"
 

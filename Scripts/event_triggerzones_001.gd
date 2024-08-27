@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 func _on_event_1_area_entered(area: Area3D) -> void:
 	if area.get_parent_node_3d().name == "Car":
 		anim_car_tires.stop()
+		SceneChanger.change_scene("")
 
 func _on_event_2_area_entered(area: Area3D) -> void:
 	if area.get_parent_node_3d().name == "Car":
